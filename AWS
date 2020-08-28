@@ -1,1 +1,9 @@
 https://calculator.s3.amazonaws.com/index.html
+
+LOG IN:
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html
+ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-public-dns-name
+ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-IPv6-address
+
+
+
