@@ -21,7 +21,7 @@ Launch Configuration:
 aws autoscaling create-launch-configuration --launch-configuration-name name1 --image-id ami-1234567890123456a --instance-type m1.medium
 
 Create an Auto Scaling Group:
-aws autoscaling create-auto-scaling-group --auto-scaling-group-name groupname1 --launch-configuration-name configname1 --min-size 1 --max-size 3 --vpc-zone-identifier subnet-1abc2345
+aws autoscaling create-auto-scaling-group --auto-scaling-group-name groupname1 --launch-configuration-name name1 --min-size 1 --max-size 3 --vpc-zone-identifier subnet-1abc2345
 
 
 
