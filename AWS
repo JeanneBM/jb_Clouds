@@ -15,8 +15,8 @@ AWS Associate Solution Architect[Windows Prompt]:
 * Mangaing AWS
 * Amazon Machine Images (AMI)
 * Architecture Security
-* Auto Scaling
 
+* Auto Scaling:
 aws autoscaling create-launch-configuration --launch-configuration-name name1 --image-id ami-1234567890123456a --instance-type m1.medium
 
 
