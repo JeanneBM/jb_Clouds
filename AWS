@@ -20,5 +20,5 @@ AWS Associate Solution Architect[Windows Prompt]:
 aws autoscaling create-launch-configuration --launch-configuration-name name1 --image-id ami-1234567890123456a --instance-type m1.medium
 
 
-
+* Building and Managing AWS Solution
 
