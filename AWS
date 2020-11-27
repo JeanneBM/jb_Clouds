@@ -7,6 +7,16 @@ ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-IPv6-address
 
 ssh -i Klucz.pem ubuntu@ip
 
+AWS Associate Solution Architect:
+
+* Virtual Private Cloud
+* Optimizing Storage
+* Optimizing Compute Resources
+* Mangaing AWS
+* Amazon Machine Images (AMI)
+* Architecture Security
+* Auto Scaling
+
 
 
 
