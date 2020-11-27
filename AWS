@@ -7,7 +7,7 @@ ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-IPv6-address
 
 ssh -i Klucz.pem ubuntu@ip
 
-AWS Associate Solution Architect:
+AWS Associate Solution Architect[Windows Prompt]:
 
 * Virtual Private Cloud
 * Optimizing Storage
@@ -16,6 +16,8 @@ AWS Associate Solution Architect:
 * Amazon Machine Images (AMI)
 * Architecture Security
 * Auto Scaling
+
+aws autoscaling create-launch-configuration --launch-configuration-name name1 --image-id ami-1234567890123456a --instance-type m1.medium
 
 
 
