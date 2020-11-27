@@ -17,12 +17,20 @@ AWS Associate Solution Architect[Windows Prompt]:
 * Architecture Security
 
 * Auto Scaling:
+
+- Windows Prompt
+
 Launch Configuration:
 aws autoscaling create-launch-configuration --launch-configuration-name name1 --image-id ami-1234567890123456a --instance-type m1.medium
 
 Create an Auto Scaling Group:
 aws autoscaling create-auto-scaling-group --auto-scaling-group-name groupname1 --launch-configuration-name name1 --min-size 1 --max-size 3 --vpc-zone-identifier subnet-1abc2345
 
+- PowerShell:
+Launch Configuration:
+New-ASLaunchConfiguration -LaunchConfigurationName name1 -InstanceType "m1.medium" -ImageId "ami-1234567890123456a" -profilename profilename1
+
+Set-AWSCredentials -AccessKey AUYMNUHJKMI5114KN -SecretKey jnfhslj5541844152afcmfjnjuasygfhnhjdksADCa -StoreAs profilname1
 
 
 * Building and Managing AWS Solution
