@@ -15,6 +15,7 @@ EC2 - Elastic Compute Cloud
 AMI - Amazon Machine Images
 EBS - Elastic Block Store
 EFS - Elastic File System
+ECR - Elastic Container Registry
 S3 - Simple Storage Service
 IAM - Identity and Access Management
 
