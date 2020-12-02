@@ -19,6 +19,9 @@ ECR - Elastic Container Registry
 S3 - Simple Storage Service
 IAM - Identity and Access Management
 
+ACL - Access Control List
+MFA - Multi-Factor Authentication
+
 * 
 
 AWS Associate Solution Architect:
