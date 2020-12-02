@@ -22,6 +22,8 @@ IAM - Identity and Access Management
 ACL - Access Control List
 MFA - Multi-Factor Authentication
 SNS - Simple Notification Service
+SQS - Simple Queue Service
+CLI - Command Line Interface
 
 * 
 
@@ -52,3 +54,5 @@ New-ASAutoScalingGroup -AutoScalingGroupName groupname1 -LaunchConfigurationName
 
 * Building and Managing AWS Solution
 
+CLI:
+aws configure
