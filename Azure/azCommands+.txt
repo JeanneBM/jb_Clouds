@@ -1,0 +1,21 @@
+Sandbox
+
+date
+az upgrade
+get-date
+bash
+az interactive
+version
+exit
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+The Azure Well-Architected Framework consists of five pillars:
+
+Cost optimization
+Operational excellence
+Performance efficiency
+Reliability
+Security
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
