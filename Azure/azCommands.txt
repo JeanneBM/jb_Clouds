@@ -1,3 +1,5 @@
+Sandbox
+
 date
 az upgrade
 get-date
