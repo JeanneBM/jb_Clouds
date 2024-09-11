@@ -22,3 +22,10 @@ Reliability
 Security
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AZ400
+
+az devops configure --defaults organization=https://dev.azure.com/organization project="project name"
+az repos pr create --title "Review Feature-1 before merging to main" --work-items 38 39 `
+--description "#Merge feature-1 to main" `
+--source-branch feature/myFeature-1 --target-branch main `
+--repository myWebApp --open
