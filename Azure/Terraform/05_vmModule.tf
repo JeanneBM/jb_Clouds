@@ -11,17 +11,17 @@ provider "azurerm" {
 variables.tf:
 ==================
 variable "resource_group_name" {
-  description = "Name of resource group provided by the lab."
+  description = "Name of resource group" */
   type        = string
 }
 
 variable "vnet_name" {
-  description = "Name of the Virtual Network provided by the lab."
+  description = "Name of the Virtual Network" */
   type        = string
 }
 
 variable "subnet_name" {
-  description = "Name of the subnet to use in the Virtual Network. Defaults to app."
+  description = "Name of the subnet to use in the Virtual Network. Defaults to app." */
   type        = string
   default     = "app"
 }
@@ -59,7 +59,7 @@ terraform.tfvars:
 ==================
 resource_group_name = "RESOURCE_GROUP_NAME"
 vnet_name           = "VNET_NAME"
-Deploy the configuration and verify the correct output is displayed in the terminal.
+
 
 terraform init; terraform apply -auto-approve
 
@@ -120,18 +120,18 @@ module "linux" {
 }
 Add the following input variables to your variables.tf file:
 variable "vm_name" {
-  description = "Name of virtual machine to create."
+  description = "Name of virtual machine to create." */
   type        = string
 }
 
 variable "admin_username" {
-  description = "Admin username for virtual machine. Defaults to azureuser."
+  description = "Admin username for virtual machine. Defaults to azureuser." */
   type        = string
   default     = "azureuser"
 }
 
 variable "application_port" {
-  description = "Port to use for the flask application. Defaults to 80."
+  description = "Port to use for the flask application. Defaults to 80." */
   type        = number
   default     = 80
 }
@@ -145,13 +145,9 @@ output "public_ip" {
 Add to the terraform.tfvars:
 ==================
 vm_name             = "taco-wagon-app"
-Initialize the configuration to add the virtual-machine module and TLS provider.
-terraform init
-Validate and deploy the configuration.
-terraform validate
+
+terraform init; terraform validate
 terraform apply -auto-approve
-Add a Network Security Group to the VM
-In this objective, you will add a Network Security Group (NSG) and NSG rule to allow traffic to the application port defined for the virtual machine. Then associated the NSG with the virtual machine's network interface.
 
 Add to the main.tf:
 ==================
