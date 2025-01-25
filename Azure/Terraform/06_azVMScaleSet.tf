@@ -9,17 +9,17 @@ provider "azurerm" {
 variables.tf:
 ==================
 variable "resource_group_name" {
-  description = "Name of resource group provided by the lab."
+  description = "Name of resource group" */
   type        = string
 }
 
 variable "vnet_name" {
-  description = "Name of the Virtual Network provided by the lab."
+  description = "Name of the Virtual Network" */
   type        = string
 }
 
 variable "subnet_name" {
-  description = "Name of the subnet to use in the Virtual Network. Defaults to web."
+  description = "Name of the subnet to use in the Virtual Network. Defaults to web." */
   type        = string
   default     = "web"
 }
