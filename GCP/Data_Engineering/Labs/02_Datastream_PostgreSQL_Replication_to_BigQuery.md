@@ -14,6 +14,7 @@ gcloud sql instances create ${POSTGRES_INSTANCE} \
 
 gcloud sql connect postgres-db --user=postgres
 ```
+Output:
 ```
 Welcome to Cloud Shell! Type "help" to get started.
 Your Cloud Platform project in this session is set to qwiklabs-gcp-00-fd0eb55ab888.
