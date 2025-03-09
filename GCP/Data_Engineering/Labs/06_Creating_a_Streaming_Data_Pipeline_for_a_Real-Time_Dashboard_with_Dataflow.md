@@ -198,75 +198,48 @@ Task 7. Create a real-time dashboard
 * In Setup > Metric, click Record Count, and then select total_passengers.
 * In Setup > Metric, click Add metric, and then select total_revenue.
 * In Setup > Sort, click total_rides, and then select dashboard_sort.
-
-In Setup > Sort, click Ascending.
-
-Your chart should look similar to this:
-
-Sample chart
+* In Setup > Sort, click Ascending.
+* Your chart should look similar to this:
+* Sample chart
 
 Note: Visualizing data at a minute-level granularity is currently not supported in Looker Studio as a timestamp. This is why we created our own dashboard_sort dimension.
-When you're happy with your dashboard, click Save and share to save this data source.
 
-If prompted to complete your account setup, type your country and company details, agree to the terms and conditions, and then click Continue.
-
-If prompted which updates you want to receive, answer no to all, then click Continue.
-
-If prompted with the Review data access before saving window, click Acknowledge and save.
-
-If prompted to choose an account select your Student Account.
-
-Whenever anyone visits your dashboard, it will be up-to-date with the latest transactions. You can try it yourself by clicking More options (More Options), and then Refresh data.
+* When you're happy with your dashboard, click Save and share to save this data source.
+* If prompted to complete your account setup, type your country and company details, agree to the terms and conditions, and then click Continue.
+* If prompted which updates you want to receive, answer no to all, then click Continue.
+* If prompted with the Review data access before saving window, click Acknowledge and save.
+* If prompted to choose an account select your Student Account.
+* Whenever anyone visits your dashboard, it will be up-to-date with the latest transactions. You can try it yourself by clicking More options (More Options), and then Refresh data.
 
 Task 8. Create a time series dashboard
-In this task, you create a time series chart.
-
-Click this Looker Studio link to open Looker Studio in a new browser tab.
-
-On the Reports page, in the Start with a Template section, click the [+] Blank Report template.
-
-A new, empty report opens with the Add data to report window.
-
-From the list of Google Connectors, select the BigQuery tile.
-
-Click Custom Query, and then select your ProjectID. This should appear in the following format, qwiklabs-gcp-xxxxxxx.
-
-In Enter Custom Query, paste the following query:
-
+* In this task, you create a time series chart.
+* Click this Looker Studio link to open Looker Studio in a new browser tab.
+* On the Reports page, in the Start with a Template section, click the [+] Blank Report template.
+* A new, empty report opens with the Add data to report window.
+* From the list of Google Connectors, select the BigQuery tile.
+* Click Custom Query, and then select your ProjectID. This should appear in the following format, qwiklabs-gcp-xxxxxxx.
+* In Enter Custom Query, paste the following query:
+```
 SELECT
   *
 FROM
   taxirides.realtime
 WHERE
   ride_status='enroute'
-Copied!
-Click Add > Add To Report.
-
-A new untitled report appears. It may take up to a minute for the screen to finish refreshing.
-
-Create a time series chart
-In the Data pane, click Add a Field > Add calculated field.
-
-Click All Fields on the left corner.
-
-Change the timestamp field type to Date & Time > Date Hour Minute (YYYYMMDDhhmm).
-
-In the change timestamp dialog, click Continue, and then click Done.
-
-In the top menu, click Add a chart.
-
-Choose Time series chart.
-
-Time Series
-
-Position the chart in the bottom left corner - in the blank space.
-
-In Setup > Dimension, click timestamp (Date), and then select timestamp.
-
-In Setup > Dimension, click timestamp, and then select calendar. Calendar
-
-In Data Type, select Date & Time > Date Hour Minute.
-
-Click outside the dialog to close it. You do not need to add a name.
-
-In Setup > Metric, click Record Count, and then select meter reading.
+```
+* Click Add > Add To Report.
+* A new untitled report appears. It may take up to a minute for the screen to finish refreshing.
+* Create a time series chart
+* In the Data pane, click Add a Field > Add calculated field.
+* Click All Fields on the left corner.
+* Change the timestamp field type to Date & Time > Date Hour Minute (YYYYMMDDhhmm).
+* In the change timestamp dialog, click Continue, and then click Done.
+* In the top menu, click Add a chart.
+* Choose Time series chart.
+* Time Series
+* Position the chart in the bottom left corner - in the blank space.
+* In Setup > Dimension, click timestamp (Date), and then select timestamp.
+* In Setup > Dimension, click timestamp, and then select calendar. Calendar
+* In Data Type, select Date & Time > Date Hour Minute.
+* Click outside the dialog to close it. You do not need to add a name.
+* In Setup > Metric, click Record Count, and then select meter reading.
