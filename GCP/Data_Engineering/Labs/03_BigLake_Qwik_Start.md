@@ -253,27 +253,23 @@ bq mkdef \
 ```
 cat /tmp/tabledef.json
 ```
-Get the schema from your table:
+* Get the schema from your table:
+```
 bq show --schema --format=prettyjson  demo_dataset.external_table > /tmp/schema
-Copied!
-Update the table using the new external table definition:
+```
+* Update the table using the new external table definition:
+```
 bq update --external_table_definition=/tmp/tabledef.json --schema=/tmp/schema demo_dataset.external_table
-Copied!
-Click Check my progress to verify the objective.
-Please update external table to Biglake table.
-Update external table to Biglake table
-
-Please update external table to Biglake table.
-
-Verify the updated table
-From the Navigation Menu, go to BigQuery > BigQuery Studio.
-
-Navigate to demo-dataset > and double click external_table.
-
-Open the Details tab.
-
-Verify under External Data Configuration that the table is now using the proper Connection ID.
-
-external data configuration
+```
+* Click Check my progress to verify the objective.
+* Please update external table to Biglake table.
+* Update external table to Biglake table
+* Please update external table to Biglake table.
+* Verify the updated table
+* From the Navigation Menu, go to BigQuery > BigQuery Studio.
+* Navigate to demo-dataset > and double click external_table.
+* Open the Details tab.
+* Verify under External Data Configuration that the table is now using the proper Connection ID.
+    - external data configuration
 
 Great! You successfully upgraded the existing external table to a BigLake table by associating it to a cloud resource connection.
