@@ -1,42 +1,47 @@
 Task 1. Complete environment configuration tasks
-First, you're going to perform a few environment configuration tasks to support the execution of a Dataproc Serverless workload.
-
-In the Cloud Shell, run the following command to enable Private IP Access:
+* First, you're going to perform a few environment configuration tasks to support the execution of a Dataproc Serverless workload.
+* In the Cloud Shell, run the following command to enable Private IP Access:
+```
 gcloud compute networks subnets update default --region=us-west1 --enable-private-ip-google-access
-Copied!
-Use the following command to create a new Cloud Storage bucket as a staging location:
+```
+* Use the following command to create a new Cloud Storage bucket as a staging location:
+```
 gsutil mb -p  qwiklabs-gcp-04-33309b7906a4 gs://qwiklabs-gcp-04-33309b7906a4
-Copied!
-Use the following command to create a new Cloud Storage bucket as temporary location for BigQuery while it creates and loads a table:
+```
+* Use the following command to create a new Cloud Storage bucket as temporary location for BigQuery while it creates and loads a table:
+```
 gsutil mb -p  qwiklabs-gcp-04-33309b7906a4 gs://qwiklabs-gcp-04-33309b7906a4-bqtemp
-Copied!
-Create a BQ dataset to store the data.
+```
+* Create a BQ dataset to store the data.
+```
 bq mk -d  loadavro
-Copied!
-Complete environment configuration tasks
+```
+* Complete environment configuration tasks
 
 Task 2. Download lab assets
-Next, you're going to download a few assets necessary to complete the lab into lab provided Compute Engine VM. You will perform the rest of the steps in the lab inside the Compute Engine VM.
-
-From the Navigation menu click on Compute Engine. Here you'll see a linux VM provisioned for you. Click the SSH button next to the lab-vm instance.
-GCE VM Instance Page
-
-At the VM terminal prompt, download the Avro file that will be processed for storage in BigQuery.
+* Next, you're going to download a few assets necessary to complete the lab into lab provided Compute Engine VM. You will perform the rest of the steps in the lab inside the Compute Engine VM.
+* From the Navigation menu click on Compute Engine. Here you'll see a linux VM provisioned for you. Click the SSH button next to the lab-vm instance.
+* GCE VM Instance Page
+* At the VM terminal prompt, download the Avro file that will be processed for storage in BigQuery.
+```
 wget https://storage.googleapis.com/cloud-training/dataengineering/lab_assets/idegc/campaigns.avro
-Copied!
-Next, move the Avro file to the staging Cloud Storage bucket you created earlier.
+```
+* Next, move the Avro file to the staging Cloud Storage bucket you created earlier.
+```
 gcloud storage cp campaigns.avro gs://qwiklabs-gcp-04-33309b7906a4
-Copied!
-Download an archive containing the Spark code to be executed against the Serverless environment.
+```
+* Download an archive containing the Spark code to be executed against the Serverless environment.
+```
 wget https://storage.googleapis.com/cloud-training/dataengineering/lab_assets/idegc/dataproc-templates.zip
-Copied!
-Extract the archive.
+```
+* Extract the archive.
+```
 unzip dataproc-templates.zip
-Copied!
-Change to the Python directory.
+```
+* Change to the Python directory.
+```
 cd dataproc-templates/python
-Copied!
-Download lab assets
+```
 
 Task 3. Configure and execute the Spark code
 Next, you're going to set a few environment variables into VM instance terminal and execute a Spark template to load data into BigQuery.
