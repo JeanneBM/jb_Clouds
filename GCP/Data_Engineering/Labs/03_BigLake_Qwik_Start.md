@@ -168,31 +168,25 @@ SELECT * FROM `qwiklabs-gcp-04-74c117999f1e.demo_dataset.biglake_table`
 * Click Run.
 * You should receive an error access denied error:
   - access denied error
-
-Now, run the following query, omitting the columns you don't have access to:
+* Now, run the following query, omitting the columns you don't have access to:
+```
 SELECT *  EXCEPT(address, phone, postal_code)
 FROM `qwiklabs-gcp-04-74c117999f1e.demo_dataset.biglake_table`
-Copied!
-The query should run without any issues and return the columns you have access to. This example shows that column level security enforced through BigQuery can also be applied to BigLake tables.
+```
+* The query should run without any issues and return the columns you have access to. This example shows that column level security enforced through BigQuery can also be applied to BigLake tables.
 
 Task 6. Upgrade external tables to BigLake tables
-You can upgrade existing tables to BigLake tables by associating the existing table to a cloud resource connection. For a complete list of flags and arguments, see bq update and bq mkdef.
-
-Create the external table
-Click three dots next to demo_dataset, then choose Create table.
-
-Under Source for Create table from, choose Google Cloud Storage.
-
-Click Browse to select the dataset. Navigate to the bucket named qwiklabs-gcp-04-74c117999f1e and then invoice.csv file to import it into BigQuery, and click Select.
-
-Under Destination, verify your lab project has been selected and you're using the demo_dataset.
-
-For the table name, use external_table.
-
-Set the table type to External Table.
+* You can upgrade existing tables to BigLake tables by associating the existing table to a cloud resource connection. For a complete list of flags and arguments, see bq update and bq mkdef.
+* Create the external table
+* Click three dots next to demo_dataset, then choose Create table.
+    - Under Source for Create table from, choose Google Cloud Storage.
+    - Click Browse to select the dataset. Navigate to the bucket named qwiklabs-gcp-04-74c117999f1e and then invoice.csv file to import it into BigQuery, and click Select.
+    - Under Destination, verify your lab project has been selected and you're using the demo_dataset.
+    - For the table name, use external_table.
+    - Set the table type to External Table.
 
 Note: Do not specify a Cloud Resource connection yet.
-Under Schema, enable Edit as text and copy and paste the following schema into the text box:
+    - Under Schema, enable Edit as text and copy and paste the following schema into the text box:
 ```
 [
 {
