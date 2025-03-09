@@ -11,10 +11,10 @@ Click on the SSH button. You will be brought to an interactive shell.
 In the SSH terminal, run the following command to set the Cloud Run functions region:
 
 gcloud config set functions/region REGION
-Copied!
+
 Create and open index.js to edit:
 nano index.js
-Copied!
+
 Copy the following into the index.js file; this the code for the Cloud Function.
 /**
 * index.js Cloud Function - Avro on GCS to BQ
@@ -60,7 +60,7 @@ exports.loadBigQueryFromAvro = async (event, context) => {
         throw error; 
     }
 };
-Copied!
+
 Exit nano (Ctrl+x) and save (Y) the file.
 Create a function.
 
@@ -69,10 +69,10 @@ Next, you're going to set up background infrastructure to store assets used to i
 
 Use the following command to create a new Cloud Storage bucket as a staging location:
 gsutil mb -p  PROJECT_ID gs://PROJECT_ID
-Copied!
+
 Create a BQ dataset to store the data.
 bq mk -d  loadavro
-Copied!
+
 Create a Cloud Storage bucket and BigQuery dataset.
 
 Task 3. Deploy your function
@@ -80,18 +80,18 @@ Next, you're going to deploy the new Cloud Run function and trigger it so that t
 
 In order to ensure all system settings are in place disable and re-enable the Cloud Run functions API. First you need to disable the Cloud Run functions API:
 gcloud services disable cloudfunctions.googleapis.com
-Copied!
+
 Re-enable the Cloud Run functions API:
 gcloud services enable cloudfunctions.googleapis.com
-Copied!
+
 For the Cloud Run function to process you must add the artifactregistry.reader permission to your appspot service account.
 gcloud projects add-iam-policy-binding PROJECT_ID \
 --member="serviceAccount:PROJECT_ID@appspot.gserviceaccount.com" \
 --role="roles/artifactregistry.reader"
-Copied!
+
 Two javascript libraries must be installed to read from Cloud Storage and store the output in BigQuery.
 npm install @google-cloud/storage @google-cloud/bigquery
-Copied!
+
 Note: You may safely ignore any messages during the library installation that show entries like Unsupported Engine.
 Deploy the function using the command below.
 gcloud functions deploy loadBigQueryFromAvro \
@@ -100,7 +100,7 @@ gcloud functions deploy loadBigQueryFromAvro \
     --trigger-resource gs://PROJECT_ID \
     --trigger-event google.storage.object.finalize \
     --no-gen2
-Copied!
+
 In the termial output of the function deployment you will see status showing as Active. This indicates that the function has been successfully deployed.
 ### Subsection of Terminal Output ###
 name: projects/qwiklabs-gcp-03-d57647f277c4/locations/us-west1/functions/loadBigQueryFromAvro
@@ -113,10 +113,10 @@ updateTime: '2024-08-16T18:15:02.321Z'
 versionId: '1'
 Next, download the Avro file that will be processed by the Cloud Run function for storage in BigQuery.
 wget https://storage.googleapis.com/cloud-training/dataengineering/lab_assets/idegc/campaigns.avro
-Copied!
+
 Move the Avro file to the staging Cloud Storage bucket you created earlier. This action will trigger the Cloud Run function.
 gcloud storage cp campaigns.avro gs://PROJECT_ID
-Copied!
+
 Deploy a function.
 
 Task 4. Confirm that the data was loaded into BigQuery
@@ -126,7 +126,7 @@ To view the data in the new table in BigQuery, run the following query in the SS
 bq query \
  --use_legacy_sql=false \
  'SELECT * FROM `loadavro.campaigns`;'
-Copied!
+
 Note: The Cloud Run function will typically process very quickly but it is possible the query run against BigQuery may not return results. If that is the case for you please wait a moment and run the query again.
 The query should return results similiar to the following:
 Example output:
@@ -150,7 +150,7 @@ Any time that a Cloud Run function is executed detailed logs are maintained. As 
 
 To check the logs and see your messages in the log history run the following command in the SSH terminal.
 gcloud functions logs read loadBigQueryFromAvro
-Copied!
+
 Messages in the log appear similar to the following:
 LEVEL: D
 NAME: loadBigQueryFromAvro
