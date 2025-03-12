@@ -1,1 +1,2 @@
-https://learn.acloud.guru/course/1ab914a9-23d2-4776-9862-e2ab3cd24807/dashboard
+![image](https://github.com/user-attachments/assets/a0bc4b6d-17a9-4138-ba43-ed53a5d46663)
+
