@@ -115,11 +115,3 @@
 
 ---
 
-## **7. Next Steps**
-
-- Take the quiz to solidify your understanding.
-- Review the key concepts and use cases for each storage service.
-
----
-
-This markdown file summarizes the key points from the lesson, making it easier to review and prepare for the exam.
