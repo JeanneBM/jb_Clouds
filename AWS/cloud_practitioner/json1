@@ -1,0 +1,262 @@
+[
+  {
+    "question": "Which AWS service uses machine learning to discover and protect sensitive data stored in S3 buckets?",
+    "answer": "Macie"
+  },
+  {
+    "question": "Which AWS service is designed for processing large datasets in parallel across a cluster of virtual Hadoop and Apache Spark servers?",
+    "answer": "Amazon EMR"
+  },
+  {
+    "question": "Which of the following is a geographical area of the world that is a collection of logically grouped data centers?",
+    "answer": "Region"
+  },
+  {
+    "question": "Your company has asked if you are encrypting data at rest. What do they mean?",
+    "answer": "Encrypting data at rest means that data is being stored in an encrypted form, ensuring that the data is secure even when not actively in use."
+  },
+  {
+    "question": "Your company is developing a new web application that has high availability requirements. How can the company increase availability when deploying the application?",
+    "answer": "Multi-Region Deployment or Auto Scaling can help to increase availability."
+  },
+  {
+    "question": "You need an AWS service that can identify objects, people, text, scenes, and activities in images and videos. Which service would you choose?",
+    "answer": "Amazon Rekognition"
+  },
+  {
+    "question": "In regards to the Cloud Adoption Framework, what perspective do cloud financial management and application portfolio management fall under?",
+    "answer": "Business perspective"
+  },
+  {
+    "question": "You have been tasked with optimizing EC2 instances and the usage across your account. Which of the following can help you do this?",
+    "answer": "AWS Cost Explorer and AWS Trusted Advisor"
+  },
+  {
+    "question": "Which security concept confirms that users are who they say they are, by presenting an identity (username) and providing a verification (password)?",
+    "answer": "Authentication"
+  },
+  {
+    "question": "A customer has multiple IAM users that need the same access permissions. How can the customer provide the same access permissions to all the users quickly and efficiently?",
+    "answer": "IAM Groups"
+  },
+  {
+    "question": "You are launching an application and need to use containers. Your team primarily uses Docker. Which container service do you need to use?",
+    "answer": "Amazon ECS or Amazon EKS"
+  },
+  {
+    "question": "You found evidence of malicious and unauthorized behaviors in the account. What service can help to continue to monitor for other behavior?",
+    "answer": "Amazon GuardDuty"
+  },
+  {
+    "question": "Your company wants to move into the cloud and use a compute service that can host their applications and websites. What compute service can accomplish this?",
+    "answer": "Amazon EC2"
+  },
+  {
+    "question": "Which of the following methods can be used to access AWS resources?",
+    "answer": "AWS Management Console, AWS CLI, and AWS SDK"
+  },
+  {
+    "question": "A company is considering a fully serverless architecture. Which AWS services should the company consider using when building applications?",
+    "answer": "AWS Lambda, Amazon API Gateway, and Amazon DynamoDB"
+  },
+  {
+    "question": "Benefits of using the Cloud Adoption Framework include the following:",
+    "answer": "Business case development and Cloud skills development"
+  },
+  {
+    "question": "Which of the following is used to secure Amazon S3 buckets?",
+    "answer": "S3 Bucket Policies or IAM Policies"
+  },
+  {
+    "question": "Which is the most efficient AWS feature that allows a company to restrict IAM users from making changes to a common administrator IAM role created in all accounts in their organization?",
+    "answer": "IAM Policies"
+  },
+  {
+    "question": "A company with a business-critical application needs to ensure business continuity and that they will not be impacted by capacity restraints in a given Region. How can the company ensure this?",
+    "answer": "Multi-AZ Deployments, Elastic Load Balancing, and Auto Scaling"
+  },
+  {
+    "question": "Your company is selecting the support level they need in AWS. They need concierge-like support for billing as well as a full set of Trusted Advisor checks on the account. What levels of support meet these requirements?",
+    "answer": "AWS Business Support or AWS Enterprise Support"
+  },
+  {
+    "question": "Your team needs to use a graph database and is migrating to the cloud. What service meets this requirement?",
+    "answer": "Amazon Neptune"
+  },
+  {
+    "question": "Which of the following statements accurately describes AWS's responsibilities?",
+    "answer": "AWS is responsible for the infrastructure and security of the cloud."
+  },
+  {
+    "question": "A developer would like to build a serverless application but doesn't want to install files or configure their local development machine. Which service will allow the developer to build the application by writing code in a web browser?",
+    "answer": "AWS Cloud9"
+  },
+  {
+    "question": "How would you create and manage access keys for users that need to access AWS services from the AWS Command Line Interface (CLI)?",
+    "answer": "AWS CLI Configuration"
+  },
+  {
+    "question": "A company is using Trusted Advisor to ensure they are following AWS best practices. What real-time guidance does Trusted Advisor provide?",
+    "answer": "Cost Optimization, Performance Improvement, and Security Best Practices"
+  },
+  {
+    "question": "Which of the following is a benefit of following the AWS Well-Architected Framework?",
+    "answer": "Improved security, Better cost management, and Increased efficiency"
+  },
+  {
+    "question": "You need to launch a temporary test environment quickly and have several tasks trigger other tasks. Which services can accomplish this?",
+    "answer": "AWS Lambda and Amazon EventBridge"
+  },
+  {
+    "question": "A college student wants to quickly launch a WordPress website but doesn't have a lot of cloud experience. Which service will help the student launch the website with a low, predictable monthly fee?",
+    "answer": "Amazon Lightsail"
+  },
+  {
+    "question": "Why should you avoid using the root user account in AWS for daily operations?",
+    "answer": "Security risk"
+  },
+  {
+    "question": "Your developers need to update the company's applications and require access to services. What is the best way for them to access AWS resources without interrupting their workflow?",
+    "answer": "IAM Roles"
+  },
+  {
+    "question": "You need to deploy a complete copy of your production environment across multiple regions at the same time. What service allows you to do this?",
+    "answer": "AWS CloudFormation"
+  },
+  {
+    "question": "An on-premises application requires a consistent, high-speed connection to the AWS cloud environment that is better than an internet-based connection and supports a hybrid deployment model. Which AWS service can provide this connection?",
+    "answer": "AWS Direct Connect"
+  },
+  {
+    "question": "A medical company needs to migrate 100 TB of data to AWS. Which AWS service can perform this type of migration cost-effectively while meeting HIPAA compliance requirements?",
+    "answer": "AWS Snowball"
+  },
+  {
+    "question": "You need to ensure that the access keys for your IAM users are automatically rotated. Is this AWS's responsibility or yours?",
+    "answer": "Customer's responsibility"
+  },
+  {
+    "question": "Your company is migrating into the cloud and needs to provide trusted users with temporary credentials. What service can help with this?",
+    "answer": "AWS Security Token Service (STS)"
+  },
+  {
+    "question": "Your company is drafting the benefits of moving into the cloud. This is included in which of the phases of the cloud journey transformation?",
+    "answer": "Planning phase"
+  },
+  {
+    "question": "Which of the following is not a design principle of the AWS Well-Architected Framework?",
+    "answer": "Design for failure"
+  },
+  {
+    "question": "In which of the following is CloudFront content cached?",
+    "answer": "Edge locations"
+  },
+  {
+    "question": "Which of the following can be used to author CloudFormation templates?",
+    "answer": "AWS CloudFormation Designer or Text editor"
+  },
+  {
+    "question": "According to the AWS shared responsibility model, who is responsible for patching and updating the underlying infrastructure of AWS services?",
+    "answer": "AWS's responsibility"
+  },
+  {
+    "question": "You need to stream data in real time for a dashboard application. Which AWS service would you use?",
+    "answer": "Amazon Kinesis"
+  },
+  {
+    "question": "Which AWS service provides an additional layer of security at the instance level?",
+    "answer": "Amazon Inspector"
+  },
+  {
+    "question": "You are implementing security between services. What can you use to adhere to the principle of least privilege?",
+    "answer": "IAM Policies"
+  },
+  {
+    "question": "Under the shared responsibility model, which of the following is the customer’s responsibility when using Amazon RDS?",
+    "answer": "Managing database patches, Encryption, Backup configuration, and IAM user permissions"
+  },
+  {
+    "question": "A company would like to reduce operational overhead when operating AWS infrastructure. Which service can help them do this?",
+    "answer": "AWS Elastic Beanstalk"
+  },
+  {
+    "question": "You are using an Amazon RDS database in the AWS cloud. You want to estimate the monthly costs of running this database. Which AWS service can help you with this estimation?",
+    "answer": "AWS Pricing Calculator"
+  },
+  {
+    "question": "Which of the following services is designed to help customers protect their applications against Distributed Denial of Service (DDoS) attacks?",
+    "answer": "AWS Shield"
+  },
+  {
+    "question": "Which of the following are load balancer types offered by AWS?",
+    "answer": "Classic Load Balancer, Application Load Balancer, and Network Load Balancer"
+  },
+  {
+    "question": "By default, what can a private subnet communicate with?",
+    "answer": "Internet Gateway and NAT Gateway"
+  },
+  {
+    "question": "You need to implement a managed NoSQL database. Which AWS service would you use?",
+    "answer": "Amazon DynamoDB"
+  },
+  {
+    "question": "Your company wants to host a website on AWS, but needs it to be highly available. How can you ensure it is highly available?",
+    "answer": "Multi-AZ Deployment and Elastic Load Balancing"
+  },
+  {
+    "question": "Which of the following statements accurately describes a benefit of encryption?",
+    "answer": "Encryption ensures that data is protected from unauthorized access."
+  },
+  {
+    "question": "A developer doesn't want to hardcode the database password in their application code when developing a new application. Which service will help with accessing the password without having to hardcode it?",
+    "answer": "AWS Secrets Manager"
+  },
+  {
+    "question": "Your company requires that any hardware used is not shared with other companies. Is there a cloud deployment model that fits their needs?",
+    "answer": "Dedicated Hosts"
+  },
+  {
+    "question": "Configuring user permissions so that users can access only the resources they need to do their job follows what principle?",
+    "answer": "Least Privilege"
+  },
+  {
+    "question": "The following are benefits of cloud computing.",
+    "answer": "Scalability and Cost Efficiency"
+  },
+  {
+    "question": "When monitoring the health of their application, a company notices one of their EC2 instances seems to handle a lot more traffic than the other instances. How can the company evenly distribute the traffic across all of its servers so that one server is not overwhelmed with requests?",
+    "answer": "Elastic Load Balancer"
+  },
+  {
+    "question": "A financial company needs to migrate large amounts of data, at an exabyte scale, to AWS. Which AWS service can perform this type of migration?",
+    "answer": "AWS Snowmobile"
+  },
+  {
+    "question": "Your company needs to launch instances at random times for unknown lengths of time. They cannot go down until they are ready to terminate them. What is the cheapest EC2 pricing option they can use?",
+    "answer": "Spot Instances"
+  },
+  {
+    "question": "Your company wants to protect your web applications from SQL injections and cross-site scripting. Which service can achieve this?",
+    "answer": "AWS WAF"
+  },
+  {
+    "question": "A company would like to call or chat with AWS support when issues arise. What's the minimum support plan they need to subscribe to in order to have this access?",
+    "answer": "AWS Business Support"
+  },
+  {
+    "question": "You have two software systems that need to communicate, and you also need to ensure messages are not lost between them. Which AWS service can help meet these requirements?",
+    "answer": "Amazon SQS"
+  },
+  {
+    "question": "For a subnet to be public and send non-local traffic to the internet, we must update the route table of the public subnet and attach which of the following to the VPC that contains the subnet?",
+    "answer": "Internet Gateway"
+  },
+  {
+    "question": "A company has multiple AWS accounts across many departments. They are considering using Organizations to group all their accounts under one master payer account. What are the benefits of using Organizations?",
+    "answer": "Centralized billing, Account management, and Consolidated security policies"
+  },
+  {
+    "question": "Where is the best place to store your root user access key so your application can use it to make requests to AWS?",
+    "answer": "In AWS Secrets Manager or AWS Systems Manager Parameter Store"
+  }
+]
