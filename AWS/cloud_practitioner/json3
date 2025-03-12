@@ -1,0 +1,264 @@
+{
+  "questions": [
+    {
+      "question": "Which of the following is an action that can be taken by a root user? (Choose 3)",
+      "answer": ["Close an AWS account", "Change account settings", "Manage billing and payment"]
+    },
+    {
+      "question": "Which of the following scenarios are examples of scaling an IT architecture horizontally? (Choose 2)",
+      "answer": ["Adding more EC2 instances to handle increased traffic", "Adding more read replicas to a database"]
+    },
+    {
+      "question": "Your application can never be down. How can you ensure this requirement can be met?",
+      "answer": "Implement a multi-Region architecture with failover"
+    },
+    {
+      "question": "You are auditing configurations and changes made to resource configurations. Which service can help you view them and correct anything that does not meet requirements?",
+      "answer": "AWS Config"
+    },
+    {
+      "question": "A company is considering migrating to the public cloud, but they need to keep some data on-premises. What cloud deployment model fits their needs?",
+      "answer": "Hybrid Cloud"
+    },
+    {
+      "question": "Your company needs you to discover, prepare, and integrate data from multiple sources for analytics. Which service can do this for you using crawlers?",
+      "answer": "AWS Glue"
+    },
+    {
+      "question": "A company is planning for increased sales and traffic when they release their new video game. How can the company BEST prepare to meet the upcoming change in demand?",
+      "answer": "Use Auto Scaling to dynamically adjust resources"
+    },
+    {
+      "question": "You have to audit your environment to see if the way it is architected meets best practices according to the Well-Architected Framework. What can you use in AWS to do this?",
+      "answer": "AWS Well-Architected Tool"
+    },
+    {
+      "question": "Benefits of using the Cloud Adoption Framework include the following: (Choose 2)",
+      "answer": ["Accelerates cloud adoption", "Provides best practices for cloud migration"]
+    },
+    {
+      "question": "You need to generate, store, and manage encryption keys. Which service provides this ability?",
+      "answer": "AWS Key Management Service (KMS)"
+    },
+    {
+      "question": "You need to deploy your applications in the cloud and on-premises. Which AWS service below can be used to accomplish this?",
+      "answer": "AWS Outposts"
+    },
+    {
+      "question": "The benefits of cloud computing include which of the following? (Choose 2)",
+      "answer": ["Scalability", "Cost savings"]
+    },
+    {
+      "question": "Your company wants to build more Internet of Things devices, but they need to do it fast. Which service can achieve this?",
+      "answer": "AWS IoT Core"
+    },
+    {
+      "question": "You have been tasked with creating an environment and you have to use a JSON template to adhere to the company rules. What service allows you to do this?",
+      "answer": "AWS CloudFormation"
+    },
+    {
+      "question": "Your company requires that all services used in AWS are managed. Which of the following are managed services?",
+      "answer": "Amazon RDS, AWS Lambda, Amazon DynamoDB"
+    },
+    {
+      "question": "You are setting up new policies in IAM and need to include very specific permissions on several services that do not belong to an Organization. Which of the following can accomplish this?",
+      "answer": "IAM Policies"
+    },
+    {
+      "question": "You need an AWS service that can help you train and deploy machine learning models that will be used in your new chatbot. Which service would you choose?",
+      "answer": "Amazon SageMaker"
+    },
+    {
+      "question": "Which of the following is a design principle of the AWS Well-Architected Framework?",
+      "answer": "Implementing a multi-Region architecture for high availability"
+    },
+    {
+      "question": "Which security service provides a way to discover and help protect sensitive data?",
+      "answer": "Amazon Macie"
+    },
+    {
+      "question": "A financial company needs to migrate large amounts of data, at a terabyte scale, to AWS. Which of the following is the MOST cost-effective option?",
+      "answer": "AWS Snowball"
+    },
+    {
+      "question": "You need to cut down the latency of your website. Which service can you use to do this?",
+      "answer": "Amazon CloudFront"
+    },
+    {
+      "question": "What is an example of the principle of least privilege?",
+      "answer": "Granting only the permissions necessary to perform a task"
+    },
+    {
+      "question": "A customer has created a group of seven users. What does the customer need to attach to the group to ensure all the users have the correct permissions?",
+      "answer": "IAM Policies"
+    },
+    {
+      "question": "You have been tasked with implementing a solution that can protect resources against Distributed Denial of Service (DDoS) attacks. Which service can do this?",
+      "answer": "AWS Shield"
+    },
+    {
+      "question": "Your company is migrating into the cloud and needs to apply access control policies across multiple accounts. What service can help with this?",
+      "answer": "AWS Organizations with SCPs (Service Control Policies)"
+    },
+    {
+      "question": "Which of the following is a way you can apply the AWS Well-Architected Framework?",
+      "answer": "By conducting a Well-Architected Review"
+    },
+    {
+      "question": "Your company is migrating several projects into the cloud. Which of the following services can help them manage them all?",
+      "answer": "AWS Migration Hub"
+    },
+    {
+      "question": "You need to access your AWS resources using Python. How can you do this?",
+      "answer": "AWS SDK for Python (Boto3)"
+    },
+    {
+      "question": "Your company would like to have access to training, workshops, and discounts through AWS. Which of the following can help them do this?",
+      "answer": "AWS Training and Certification"
+    },
+    {
+      "question": "Your company has a group of EC2 instances that have random spikes in traffic. What is the most effective way to optimize these instances with the lowest operational overhead?",
+      "answer": "Use Auto Scaling"
+    },
+    {
+      "question": "You need to implement a data warehouse that can handle structured and semi-structured data. Which AWS service would you use?",
+      "answer": "Amazon Redshift"
+    },
+    {
+      "question": "Which of the following is a high-performance relational database service?",
+      "answer": "Amazon Aurora"
+    },
+    {
+      "question": "You need to implement a stateless option that allows or denies specific inbound or outbound traffic at the subnet level. What feature can you utilize for this?",
+      "answer": "Network ACLs (NACLs)"
+    },
+    {
+      "question": "You need to patch several EC2 instances in a private subnet. What can you implement to provide them with internet access outside the subnet?",
+      "answer": "NAT Gateway"
+    },
+    {
+      "question": "You are improving your current architecture, which incorporates tight coupling in the application. Which service can be used to promote loose coupling and asynchronous messaging?",
+      "answer": "Amazon SQS (Simple Queue Service)"
+    },
+    {
+      "question": "Which of the following statements is true of the default network access control list (NACL) with their default rules?",
+      "answer": "It allows all inbound and outbound traffic by default"
+    },
+    {
+      "question": "You are working in a new test environment and need to determine if there are any improvements to the architecture that can be made to meet best practices. How can you retrieve recommendations that include that information?",
+      "answer": "AWS Trusted Advisor"
+    },
+    {
+      "question": "Your company is preparing to move into the cloud. How can they estimate the total cost of ownership (TCO) based on current workloads?",
+      "answer": "AWS Pricing Calculator"
+    },
+    {
+      "question": "Your company is setting up shared file storage that can be accessed by EC2 instances, their EKS clusters, and some on-premises machines. Which AWS service should you use?",
+      "answer": "Amazon EFS (Elastic File System)"
+    },
+    {
+      "question": "Your company is conducting investigations into potential security issues. Which service can be used to help you analyze and visualize potential security issues?",
+      "answer": "Amazon Detective"
+    },
+    {
+      "question": "Your company needs to authenticate users in addition to sign-in credentials. What does this describe?",
+      "answer": "Multi-Factor Authentication (MFA)"
+    },
+    {
+      "question": "You need to store file in S3, but you need to be able to access them like a file system from your EC2 instances. Which AWS service would you use?",
+      "answer": "Amazon S3 with S3FS"
+    },
+    {
+      "question": "Which of the following is AWS responsible for? (Choose 2)",
+      "answer": ["Security of the cloud infrastructure", "Patching the underlying infrastructure of managed services"]
+    },
+    {
+      "question": "In regards to the Cloud Adoption Framework, what perspective do Workforce Transformation and Organization Alignment fall under?",
+      "answer": "People Perspective"
+    },
+    {
+      "question": "You need to ensure that the passwords for your IAM users include a number and a symbol, and be at least 10 characters long. Is this AWS's responsibility or yours?",
+      "answer": "Your responsibility"
+    },
+    {
+      "question": "You are utilizing several security services like GuardDuty, Inspector, and WAF. Which service collects data from all of these in one place?",
+      "answer": "Amazon Detective"
+    },
+    {
+      "question": "You want to ensure that all access keys are rotated every 30 days. Which AWS service can help you enforce this requirement?",
+      "answer": "IAM Access Analyzer"
+    },
+    {
+      "question": "Your company needs recommendations on how to improve performance and fault tolerance across your account. Which of the following can help you do this?",
+      "answer": "AWS Trusted Advisor"
+    },
+    {
+      "question": "According to the AWS shared responsibility model, who is responsible for patching and updating the underlying infrastructure of the Aurora service?",
+      "answer": "AWS"
+    },
+    {
+      "question": "Your company has existing Windows licenses that must use specific servers. What pricing model can be used to allow them to migrate into AWS?",
+      "answer": "Bring Your Own License (BYOL)"
+    },
+    {
+      "question": "Your company needs to migrate into AWS. They are preparing to create a contact center for users to call if they have issues with the website. What service can be implemented to accomplish this?",
+      "answer": "Amazon Connect"
+    },
+    {
+      "question": "Your company wants to store files in S3, but they are not sure how to use the different tiers. Which of the following can implement a solution that is cost-effective?",
+      "answer": "S3 Lifecycle Policies"
+    },
+    {
+      "question": "How would you run a command on several EC2 instances at the same time from the AWS Management Console?",
+      "answer": "AWS Systems Manager Run Command"
+    },
+    {
+      "question": "You need to provide four new employees with the correct permissions necessary for each of their roles. Which service can you use to gain this access?",
+      "answer": "IAM (Identity and Access Management)"
+    },
+    {
+      "question": "Which AWS service acts as a stateful virtual firewall?",
+      "answer": "Security Groups"
+    },
+    {
+      "question": "Which of the following statements describes one of AWS's responsibilities?",
+      "answer": "AWS is responsible for the security of the cloud infrastructure."
+    },
+    {
+      "question": "You are writing a runbook to organize resources with mandatory Name and Ownership information. What feature are you using to accomplish this?",
+      "answer": "AWS Resource Tags"
+    },
+    {
+      "question": "You are launching an application and need to use containers, but you do not want to manage the instances themselves. Which container service do you need to use?",
+      "answer": "AWS Fargate"
+    },
+    {
+      "question": "Your company want to ensure that all of the accounts billing is consolidated in one place. What service can be used to accomplish this?",
+      "answer": "AWS Organizations"
+    },
+    {
+      "question": "You have a personal AWS account and do not require chat or phone support. What's the MINIMUM support plan you need to subscribe to in order to have this access?",
+      "answer": "AWS Basic Support"
+    },
+    {
+      "question": "You need to update files in S3 every time there is a change made to a CloudFormation template. Which service can accomplish this?",
+      "answer": "AWS Lambda"
+    },
+    {
+      "question": "Your company is interested in migrating to the cloud and wants to ensure that they can protect their data long term. Which cloud benefit does this describe?",
+      "answer": "Durability"
+    },
+    {
+      "question": "Your company is ready to expand transformations across the environment. Which of the phases of the cloud journey transformation is this?",
+      "answer": "Scale Phase"
+    },
+    {
+      "question": "You want to implement multiple languages for your audio book. Which AWS services can help you accomplish this? (Choose 2)",
+      "answer": ["Amazon Polly", "Amazon Transcribe"]
+    },
+    {
+      "question": "Your company wants to move several applications into the cloud with as little downtime as possible. What service can accomplish this?",
+      "answer": "AWS Database Migration Service (DMS)"
+    }
+  ]
+}
