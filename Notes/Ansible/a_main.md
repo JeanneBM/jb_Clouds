@@ -77,7 +77,7 @@ Here is a simple example of an Ansible playbook to install Apache HTTP Server on
         name: httpd
         state: restarted
       when: apache_config_changed
-
+```
 # Python's Role in Ansible
 
 ## How Python is Used in Ansible
