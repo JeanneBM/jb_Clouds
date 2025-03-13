@@ -98,3 +98,16 @@ Run `terraform destroy` to delete all managed resources.
 
 ## Directory Structure
 A typical Terraform project might look like this:
+```
+my-terraform-project/
+├── main.tf          # Primary configuration file
+├── variables.tf     # Variable definitions
+├── outputs.tf       # Output definitions
+├── terraform.tfvars # Variable values
+├── provider.tf      # Provider configuration
+└── modules/         # Reusable modules
+    └── vpc/
+        ├── main.tf
+        ├── variables.tf
+        └── outputs.tf
+```
