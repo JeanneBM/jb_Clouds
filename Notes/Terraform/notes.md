@@ -144,6 +144,7 @@ output "instance_id" {
   value       = aws_instance.example.id
 }
 ```
+
 # State Management
 
 ## Local State
@@ -153,7 +154,8 @@ By default, Terraform stores state in a local file (`terraform.tfstate`). This f
 For teams or production use, store state remotely (e.g., in S3, Terraform Cloud) to enable collaboration and avoid conflicts.
 
 ### Example: Configure an S3 backend for remote state:
-```hcl
+
+```
 terraform {
   backend "s3" {
     bucket         = "my-terraform-state"
@@ -162,6 +164,7 @@ terraform {
     dynamodb_table = "terraform-locks"  # For state locking
   }
 }
+```
 # State Locking
 When using remote state, enable state locking (e.g., with DynamoDB for S3) to prevent concurrent modifications.
 
