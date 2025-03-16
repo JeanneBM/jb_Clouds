@@ -192,5 +192,106 @@ Dynamic inventory scripts or plugins (e.g., for AWS, Azure) generate the invento
 ```
 ansible-inventory -i aws_ec2.yml --graph
 ```
+# Roles
 
+## Creating a Role
+
+Use the ansible-galaxy command to create a role:
+
+```
+ansible-galaxy init my_role
+```
+
+This creates a directory structure for the role.
+
+## Using a Role
+
+Include a role in a playbook:
+
+```
+- name: Use my_role
+  hosts: all
+  roles:
+    - my_role
+```
+
+## Variables and Templates
+
+### Defining Variables
+
+Variables can be defined in multiple places, such as playbooks, inventory, or group_vars.
+
+### Using Variables
+
+Use variables in tasks:
+
+```
+- name: Install package
+  apt:
+    name: "{{ package_name }}"
+    state: present
+```
+
+### Jinja2 Templates
+
+Jinja2 templates allow dynamic content in configuration files. Example:
+
+```
+- name: Configure Nginx
+  template:
+    src: templates/nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+```
+
+## Best Practices
+
+- Use roles to organize playbooks.
+- Keep playbooks idempotent.
+- Use version control (e.g., Git) for playbooks and roles.
+- Encrypt sensitive data with Ansible Vault.
+
+## Advanced Topics
+
+### Ansible Vault
+
+Ansible Vault encrypts sensitive data like passwords or keys. Example:
+
+```
+ansible-vault encrypt secrets.yml
+```
+
+### Loops and Conditionals
+
+Use loops and conditionals for dynamic tasks:
+
+```
+- name: Install multiple packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - nginx
+    - mysql
+    - php
+```
+
+### Ansible Galaxy
+
+Ansible Galaxy is a repository for sharing and downloading roles. Example:
+
+```
+ansible-galaxy install geerlingguy.nginx
+```
+
+## Common Commands
+
+- Run a playbook: `ansible-playbook playbook.yml`
+- Check syntax: `ansible-playbook --syntax-check playbook.yml`
+- List hosts: `ansible-inventory --list`
+
+## Troubleshooting
+
+- Use `-vvv` for verbose output.
+- Check SSH connectivity to managed nodes.
+- Validate YAML syntax.
 
