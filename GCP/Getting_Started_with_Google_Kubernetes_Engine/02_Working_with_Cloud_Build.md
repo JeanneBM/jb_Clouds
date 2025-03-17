@@ -9,8 +9,9 @@
 # Task 2: Build Containers with Dockerfile and Cloud Build
 
 1. Activate Cloud Shell and create a `quickstart.sh` file:
-   ```
-   nano quickstart.sh
+```
+nano quickstart.sh
+```
 2. Add the following content:
 ```
 #!/bin/sh
