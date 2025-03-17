@@ -1,1 +1,249 @@
+Task 1: Deploy GKE Clusters
+Set Environment Variables:
 
+Open Cloud Shell.
+
+Set the region and cluster name:
+
+bash
+Copy
+export my_region=Region  # Replace "Region" with your desired region (e.g., us-central1)
+export my_cluster=autopilot-cluster-1
+Create a GKE Autopilot Cluster:
+
+Run the following command to create the cluster:
+
+bash
+Copy
+gcloud container clusters create-auto $my_cluster --region $my_region
+If prompted, click Authorize to grant permissions.
+
+Wait for Cluster Deployment:
+
+The cluster creation process will take a few minutes. Wait until the deployment is complete.
+
+Task 2: Connect to a GKE Cluster
+Authenticate to the Cluster:
+
+Run the following command to authenticate and configure kubectl:
+
+bash
+Copy
+gcloud container clusters get-credentials $my_cluster --region $my_region
+Inspect the kubeconfig File:
+
+Open the kubeconfig file to view its contents:
+
+bash
+Copy
+nano ~/.kube/config
+Press CTRL+X to exit the editor.
+
+Task 3: Use kubectl to Inspect a GKE Cluster
+View the kubeconfig File:
+
+Run the following command:
+
+bash
+Copy
+kubectl config view
+Get Cluster Information:
+
+Run:
+
+bash
+Copy
+kubectl cluster-info
+Check the Active Context:
+
+Run:
+
+bash
+Copy
+kubectl config current-context
+List All Contexts:
+
+Run:
+
+bash
+Copy
+kubectl config get-contexts
+Enable kubectl Autocompletion:
+
+Run:
+
+bash
+Copy
+source <(kubectl completion bash)
+Test autocompletion by typing kubectl followed by a space and pressing Tab twice.
+
+Task 4: Deploy Pods to GKE Clusters
+Deploy an NGINX Pod:
+
+Run:
+
+bash
+Copy
+kubectl create deployment --image nginx nginx-1
+Verify Pod Deployment:
+
+Check the status of the Pod:
+
+bash
+Copy
+kubectl get pods
+Set an Environment Variable for the Pod Name:
+
+Export the Pod name:
+
+bash
+Copy
+export my_nginx_pod=$(kubectl get pods -l app=nginx-1 -o jsonpath="{.items[0].metadata.name}")
+Verify the variable:
+
+bash
+Copy
+echo $my_nginx_pod
+Describe the Pod:
+
+Run:
+
+bash
+Copy
+kubectl describe pod $my_nginx_pod
+Push a File into the Container:
+
+Create a test.html file:
+
+bash
+Copy
+nano ~/test.html
+Add the following content:
+
+html
+Copy
+<header><title>This is title</title></header>
+Hello world
+Run HTML
+Save and exit (CTRL+X, Y, Enter).
+
+Copy the file to the Pod:
+
+bash
+Copy
+kubectl cp ~/test.html $my_nginx_pod:/usr/share/nginx/html/test.html
+Expose the Pod with a Service:
+
+Create a LoadBalancer service:
+
+bash
+Copy
+kubectl expose pod $my_nginx_pod --port 80 --type LoadBalancer
+Verify the Service:
+
+Check the service details:
+
+bash
+Copy
+kubectl get services
+Note the EXTERNAL-IP.
+
+Test the Service:
+
+Use curl to access the service:
+
+bash
+Copy
+curl http://[EXTERNAL_IP]/test.html
+Task 5: Introspect GKE Pods
+Clone the Repository:
+
+Run:
+
+bash
+Copy
+git clone https://github.com/GoogleCloudPlatform/training-data-analyst
+Create a Soft Link:
+
+Run:
+
+bash
+Copy
+ln -s ~/training-data-analyst/courses/ak8s/v1.1 ~/ak8s
+Deploy a New Pod Using a YAML File:
+
+Navigate to the directory:
+
+bash
+Copy
+cd ~/ak8s/GKE_Shell/
+Deploy the Pod:
+
+bash
+Copy
+kubectl apply -f ./new-nginx-pod.yaml
+Verify the New Pod:
+
+Check the Pod status:
+
+bash
+Copy
+kubectl get pods
+Connect to the Pod:
+
+Start an interactive shell:
+
+bash
+Copy
+kubectl exec -it new-nginx -- /bin/bash
+Install Nano and Create a File:
+
+Update the package list and install nano:
+
+bash
+Copy
+apt-get update
+apt-get install nano
+Create a test.html file:
+
+bash
+Copy
+cd /usr/share/nginx/html
+nano test.html
+Add the following content:
+
+html
+Copy
+<header><title>This is title</title></header>
+Hello world
+Run HTML
+Save and exit (CTRL+X, Y, Enter).
+
+Exit the Shell:
+
+Run:
+
+bash
+Copy
+exit
+Set Up Port Forwarding:
+
+Forward a local port to the Pod:
+
+bash
+Copy
+kubectl port-forward new-nginx 10081:80
+Test the Pod:
+
+Open a new Cloud Shell tab and run:
+
+bash
+Copy
+curl http://127.0.0.1:10081/test.html
+View Pod Logs:
+
+Open another Cloud Shell tab and stream the logs:
+
+bash
+Copy
+kubectl logs new-nginx -f --timestamps
