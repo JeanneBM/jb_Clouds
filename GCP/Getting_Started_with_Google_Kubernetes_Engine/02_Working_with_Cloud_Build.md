@@ -22,4 +22,10 @@ echo "Hello, world! The time is $(date)."
 ```
 nano Dockerfile
 ```
-5. 
+5. Add the following content:
+
+```
+FROM alpine
+COPY quickstart.sh /
+CMD ["/quickstart.sh"]
+```
