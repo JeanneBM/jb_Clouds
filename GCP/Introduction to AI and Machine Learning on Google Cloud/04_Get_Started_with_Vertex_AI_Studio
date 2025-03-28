@@ -1,1 +1,207 @@
+Task 1. Analyze images with Gemini Freeform
+In the Google Cloud console, navigate to Navigation menu (Navigation menu)>Artificial Intelligence > Vertex AI> Vertex AI Studio> Overview.
+Note: If you cannot see the Vertex AI in the Navigation menu click on More Products dropdown.
+You find four features: Freeform, Chat, Vision, and Speech. You focus on the first two in this lab.
 
+For Generate with Gemini, click Open Freeform.
+Note: The UI contains three main sections:
+Prompt (located at the top): Here, you can create a task that utilizes freeform capabilities.
+Configuration (located on the right): This section allows you to select models, configure parameters, and obtain the corresponding code.
+Response (located at the bottom): This section displays the results of your task.
+Name your prompt as Image analysis. NameYourPrompt
+
+Download the sample image. Right click the timetable image and then save it to your desktop.
+
+timetable
+
+Generate a title for the image. Click Insert media > Upload on top right and upload the timetable image. The media can be either images or videos.
+
+Select us-west1 for the Region.
+
+Copy the following text and click Submit.
+
+Title the image.
+Copied!
+Or be more specific:
+
+Title the image in 3 words.
+Copied!
+Does the title meet your expectations? Try to modify the prompt to see if you get different results.
+
+timetableinfo
+
+Describe the image. Replace the previous prompt with the following and click Submit.
+Describe the image in detail.
+Copied!
+Tune the parameter. Adjust the temperature by scrolling from left (0) to right (1). Resubmit the prompt to observe any changes in the outcome compared to the previous result.
+Note: Temperature controls the degree of randomness in token selection. Lower temperatures are good for prompts that expect a true or correct response, while higher temperatures can lead to more diverse or unexpected results. With a temperature of 0 the highest probability token is always selected.
+Extract the text from the image. Replace the previous prompt with the following:
+Read the text in the image.
+Copied!
+Further on, if you want to format the output to a list, replace the previous prompt with the following:
+
+Parse the time and city in this image into a list with two columns: time and city.
+Copied!
+Your turn - try out some different prompts! How do these results differ from before?
+
+Analyze the information on the image. Replace the previous prompt with the following:
+Calculate the percentage of the flights to different continents.
+Copied!
+Does the result meet your expectations? You are highly encouraged to try different prompts for various tasks. You are also encouraged to experiment with different temperature settings to observe the changes in the result.
+
+Save the prompt. Once you finish the prompt design, save the prompt by clicking Save and if prompted to select the region select us-west1 from the dropdown and then confirm Save. To find your saved prompts, navigate to Saved Prompts.
+Note: After selecting Save, give the prompts a few seconds to properly save and then proceed further with the lab.
+Click Check my progress to verify the objectives.
+
+Assessment Completed!
+Extract the content of the image.
+
+Assessment Completed!
+Task 2. Explore freeform capabilities
+In addition to images and text, Gemini freeform is capable of accepting videos as inputs and generating text as an output.
+
+Navigate to Cloud Storage > Bucket and copy the name of your Cloud Storage bucket and save it to use in the further step.
+
+Click Activate Cloud shell, and run the command below to copy the sample video gs://spls/gsp154/video/train.mp4 (preview) to your Cloud Storage bucket.
+
+gcloud storage cp gs://spls/gsp154/video/train.mp4 gs://<Your-Cloud-Storage-Bucket>
+Copied!
+Note: Make sure to replace the <Your-Cloud-Storage-Bucket> with the bucket name you copied earlier.
+Again navigate to Vertex AI> Vertex AI Studio> Overview.
+For Generate with Gemini, click Open Freeform.
+Click Inset Media > Import from Cloud Storage.
+Click on your bucket name and then click on the sample video i.e., train.mp4 and click Select.
+Generate any information of the video by inserting your own prompt.
+For example to get a title for the video copy the following and click Submit.
+
+Title the video.
+Copied!
+Freeform powered by Gemini offers many capabilities such as writing stories from images, analyzing videos, and generating multimedia ads. Explore more freeform use cases by clicking Prompt gallery. Check out more information about design multimodal prompts.
+
+Task 3. Design prompts with free-form and structured mode
+Navigate back to the Vertex AI Studio > Freeform page.
+Create prompt
+Create Prompt lets you design prompts for tasks relevant to your business use case including code generation.
+
+Click on the Open Freeform button as shown in the image below. The UI may differ slightly from this screenshot.
+
+click-text-prompt
+
+You can hover or click on ? buttons on the right side of the page to learn more about each field and parameter such as Temperature and Token limit.
+
+Prompt design
+You can feed your desired input text, e.g. a question, to the model. The model will then provide a response based on how you structured your prompt. The process of figuring out and designing the best input text (prompt) to get the desired response back from the model is called Prompt Design.
+
+There is no best way to design the prompts yet. There are 3 methods you can use to shape the model's response:
+
+Zero-shot prompting - This is a method where the LLM is given only a prompt that describes the task and no additional data. For example, if you want the LLM to answer a question, you just prompt "what is prompt design?".
+
+One-shot prompting - This is a method where the LLM is given a single example of the task that it is being asked to perform. For example, if you want the LLM to write a poem, you might give it a single example poem.
+
+Few-shot prompting - This is a method where the LLM is given a small number of examples of the task that it is being asked to perform. For example, if you want the LLM to write a news article, you might give it a few news articles to read.
+
+FREE-FORM - This mode provides a flexible and easy approach to designing your prompt, making it suitable for small and experimental prompts without additional examples. It allows for exploration of zero-shot prompting. Additionally, you can use a template-based approach to include context and multiple examples, which is particularly useful for one-shot and few-shot prompting methods that you will explore later.
+
+FREE-FORM mode
+Try zero-shot prompting in FREE-FORM mode.
+
+Copy the following over to the prompt input field. Keep the current default model setting, which is Gemini 1.5 Pro.
+Note: The model name may change with the release of new models.
+What is a prompt gallery?
+Copied!
+Click on the SUBMIT button on the right side of the page.
+The model will respond to a comprehensive definition of the term prompt gallery.
+
+Here are some exploratory exercises to explore.
+
+adjust the Output token limit parameter to 1 and click the SUBMIT button
+adjust the Output token limit parameter to 1024 and click the SUBMIT button
+adjust the Temperature parameter to 0.5 and click the SUBMIT button
+adjust the Temperature parameter to 1.0 and click the SUBMIT button
+Inspect how the responses change as to change the parameters.
+
+Design and manage your prompts
+You can design prompts in more organized ways. You can provide Context and Examples in their respective input fields. This is a good opportunity to learn one-shot and few-shot prompting.
+
+In this section, you will ask the model to complete a sentence.
+
+Return to the Text Prompt window.
+
+At the top of the page, click on the Add examples.
+
+Add this to the INPUT field:
+
+the color of the grass is
+Copied!
+Add this to the OUTPUT field:
+the color of the grass is green
+Copied!
+Click on the Add examples button on the right side of the page.
+Instead of completing the sentence, the model gave a full sentence as a response which is not what you wanted. Try to influence the model's response with one-shot prompting. This time around, add an example for the model to base its output from.
+
+In the Test field, copy the following in Write an input field.
+the color of the sky is
+Copied!
+Note: You may want to change "color" to "colour" if that's the correct spelling in your country.
+Click on the SUBMIT button on the right side of the page.
+You have successfully influenced the way the model produces response.
+
+For the next practice, you will use the model to perform sentiment analysis on a sentence, such as determining whether a movie review is positive or negative.
+
+Return to the Text Prompt window.
+Click on the Add examples and in the Examples field, delete the previous text for INPUT and OUTPUT for green grass.
+The model did not have enough information to know that you were asking it to do sentiment analysis. This can be improved by providing the model with a few examples of what you are looking for.
+
+Try adding these examples as shown in the image below:
+
+INPUT	OUTPUT
+A well-made and entertaining film	positive
+I fell asleep after 10 minutes	negative
+The movie was ok	neutral
+Then click on the Add examples button on the right side of the page.
+
+structured
+
+For Test field, copy the following prompt over to the Write an input field.
+It was a time well spent!
+Copied!
+Click on the SUBMIT button on the right side of the page.
+test
+
+The model now provides a sentiment for the input text. For the text It was a time well spent!, the sentiment is labeled as positive.
+
+You can also save the newly designed prompt. To save the prompt, name the prompt any way you like, such as sentiment-analysis-test and click on Save button and then select the region us-west1 of your lab. Click SAVE
+
+(If you encounter an error while saving, please click Retry )
+
+The saved prompt will appear by navigating to Vertex AI studio > Saved Prompts.
+
+languageprompts
+
+Click Check my progress to verify the objectives.
+
+Assessment Completed!
+Create prompts with text
+
+Assessment Completed!
+Task 4. Generate conversations
+Create Chat Prompt lets you have a freeform chat with the model, which tracks what was previously said and responds based on context.
+
+From the left menu, navigate to Chat to create a new chat prompt.
+
+For Model, select gemini-1.5-flash-001.
+
+For this section, you will add context to the chat and let the model respond based on the context provided.
+
+Then add the following context to the System instructions field by clicking the EDIT button.
+Your name is Roy.
+You are a support technician of an IT department.
+You only respond with "Have you tried turning it off and on again?" to any queries.
+Copied!
+Add the following text to the chatbox under Responses.
+My computer is so slow
+Copied!
+Press Enter key or click Send message (right arrow-head button).
+The model would consider the provided additional context and answer the questions within the constraints.
+
+Name the prompt anyway you like and click on Save button and then select the region us-west1 of your lab. Click SAVE
