@@ -1,1 +1,207 @@
+Task 1. Prepare the training data
+The initial Vertex AI dashboard illustrates the major stages to train and deploy a ML model: prepare the training data, train the model, and get predictions. Later, the dashboard displays your recent activities, such as the recent datasets, models, predictions, endpoints, and notebook instances.
 
+Create a dataset
+In the Google Cloud console, on the Navigation menu, click Vertex AI > Datasets.
+Click Create dataset.
+Give dataset a name LoanRisk.
+For the data type and objective, click Tabular, and then select Regression/classification.
+Click Create.
+Upload data
+There are three options to import data in Vertex AI:
+
+Upload CSV files from your computer.
+Select CSV files from Cloud Storage.
+Select a table or view from BigQuery.
+For convenience, the dataset is already uploaded to Cloud Storage.
+
+For the data source, select Select CSV files from Cloud Storage.
+
+For Import file path, enter:
+
+spls/cbl455/loan_risk.csv
+Copied!
+Click Continue.
+Note: You can also configure this page by clicking Datasets on the left menu and then selecting the dataset name on the Datasets page.
+(Optional) Generate statistics
+To see the descriptive statistics for each column of your dataset, click Generate statistics .
+Generating the statistics might take a few minutes, especially the first time.
+
+When the statistics are ready, click each column name to display analytical charts.
+
+Task 2. Train your model
+With a dataset uploaded, you're ready to train a model to predict whether a customer will repay the loan.
+
+Click Train new model and select Other .
+Training method
+The dataset is already named LoanRisk.
+
+For Objective, select Classification.
+
+You select classification instead of regression because you are predicting a distinct number (whether a customer will repay a loan: 0 for repay, 1 for default/not repay) instead of a continuous number.
+
+Click Continue.
+Model details
+Specify the name of the model and the target column.
+
+Give the model a name, such as LoanRisk.
+
+For Target column, select Default .
+
+(Optional) Explore Advanced options to determine how to assign the training vs. testing data and specify the encryption.
+
+Click Continue.
+
+For Add features, click Continue.
+
+Training options
+Specify which columns you want to include in the training model. For example, ClientID might be irrelevant to predict loan risk.
+
+Click the minus sign on the ClientID row to exclude it from the training model.
+
+(Optional) Explore Advanced options to select different optimization objectives.
+For more information about optimization objectives for tabular AutoML models, refer to the Optimization objectives for tabular AutoML models guide.
+
+Click Continue.
+
+Compute and pricing
+For Budget, which represents the number of node hours for training, enter 1.
+Training your AutoML model for 1 compute hour is typically a good start for understanding whether there is a relationship between the features and label you've selected. From there, you can modify your features and train for more time to improve model performance.
+
+Leave early stopping Enabled.
+
+Click Start training.
+
+Depending on the data size and the training method, the training can take from a few minutes to a couple of hours. Normally you would receive an email from Google Cloud when the training job is complete. However, in the Qwiklabs environment, you will not receive an email.
+
+Note: To eliminate the typical hour-long wait for model training, download a pretrained model in Task 5. This model is the result of Tasks 1 and 2. Tasks 3 and 4 are only for demonstration and apply if you train the model yourself.
+Task 3. Evaluate the model performance (demonstration only)
+Vertex AI provides many metrics to evaluate the model performance. You focus on three:
+
+Precision/Recall curve
+Confusion Matrix
+Feature Importance
+Note: If you had a model trained, you could navigate to the Model Registry tab in Vertex AI.
+1. Navigate to the Model Registry.
+2. Click on the model you just trained.
+3. Browse the Evaluate tab.
+However in this lab, you can skip this step since you use a pre-trained model.
+The precision/recall curve
+Confidence threshold slider set to 0.5 and graphs for precision/recall curve, ROC curve, and Precision-recall by threshold
+The confidence threshold determines how a ML model counts the positive cases. A higher threshold increases the precision, but decreases recall. A lower threshold decreases the precision, but increases recall.
+
+You can manually adjust the threshold to observe its impact on precision and recall and find the best tradeoff point between the two to meet your business needs.
+
+The confusion matrix
+A confusion matrix tells you the percentage of examples from each class in your test set that your model predicted correctly.
+
+Confusion matrix table displaying true label and predicted label classifications
+The confusion matrix shows that your initial model is able to predict 100% of the repay examples and 87% of the default examples in your test set correctly, which is not too bad.
+
+You can improve the percentage by adding more examples (more data), engineering new features, and changing the training method, etc.
+
+The feature importance
+In Vertex AI, feature importance is displayed through a bar chart to illustrate how each feature contributes to a prediction. The longer the bar, or the larger the numerical value associated with a feature, the more important it is.
+
+Feature importance bar chart for loan, income, and age
+These feature importance values could be used to help you improve your model and have more confidence in its predictions. You might decide to remove the least important features next time you train a model or to combine two of the more significant features into a feature cross to see if this improves model performance.
+
+Feature importance is just one example of Vertex AI’s comprehensive machine learning functionality called Explainable AI. Explainable AI is a set of tools and frameworks to help understand and interpret predictions made by machine learning models.
+
+Task 4. Deploy the model (demonstration only)
+Note: You will not deploy the model to an endpoint because the model training can take an hour. Here you can review the steps you would perform in a production environment.
+Now that you have a trained model, the next step is to create an endpoint in Vertex. A model resource in Vertex can have multiple endpoints associated with it, and you can split traffic between endpoints.
+
+Create and define an endpoint
+On your model page, click Deploy & test, and then click Deploy to Endpoint.
+
+For Endpoint name, type LoanRisk
+
+Click Continue.
+
+Model settings and monitoring
+Leave the traffic splitting settings as-is.
+
+For Machine type, select e2-standard-8, 8 vCPUs, 32 GiB memory.
+
+For Explainability Options, click Feature attribution.
+
+Click Done.
+
+Click Continue.
+
+In Model monitoring, click Continue.
+
+In Model objectives > Training data source, select Vertex AI dataset.
+
+Select your dataset from the drop down menu.
+
+In Target column, type Default
+
+Leave the remaining settings as-is and click Deploy.
+
+Your endpoint will take a few minutes to deploy. When it is completed, a green check mark will appear next to the name.
+
+Now you're ready to get predictions on your deployed model.
+
+Task 5. Get predictions
+In this section, use the AutoML-Gateway to work with an existing trained model.
+
+ENVIRONMENT VARIABLE	VALUE
+Credit_Risk ENDPOINT	1411183591831896064
+INPUT_DATA_FILE	INPUT-JSON
+To use the trained model, you will need to create some environment variables.
+
+Open a Cloud Shell window.
+
+Download the lab assets:
+
+gcloud storage cp gs://cloud-training/CBL455/INPUT-JSON .
+Copied!
+Create a INPUT_DATA_FILE environment variable:
+export INPUT_DATA_FILE="INPUT-JSON" 
+Copied!
+Create a PROJECT_NUMBER environment variable:
+export PROJECT_NUMBER=$(gcloud projects describe $(gcloud config get-value project) --format="value(projectNumber)")
+Copied!
+Create a AUTOML_SERVICE environment variable:
+export AUTOML_SERVICE="https://automl-proxy-$PROJECT_NUMBER.us-central1.run.app/v1"
+Copied!
+Note: After the lab assets are extracted, take a moment to review the contents.
+The INPUT-JSON file is used to provide Vertex AI with the model data required. Alter this file to generate custom predictions.
+The file INPUT-JSON is composed of the following values:
+
+{
+  "instances": [
+    {
+      "age": 40.77430558, 
+      "ClientID": "997", 
+      "income": 44964.0106, 
+      "loan": 3944.219318
+    }
+  ]
+}
+Copied!
+Enter the following command to request a prediction:
+curl -X POST -H "Content-Type: application/json" $AUTOML_SERVICE -d "@${INPUT_DATA_FILE}" -s | jq
+Copied!
+Expected Output:
+
+{
+  "predictions": [
+    {
+      "scores": [
+        0.9999980926513672,
+        0.000001897001311590429
+      ],
+      "classes": [
+        "0",
+        "1"
+      ]
+    }
+  ],
+  "deployedModelId": "3093594712003575808",
+  "model": "projects/1030115194620/locations/us-central1/models/4831874217005809664",
+  "modelDisplayName": "credit_risk_20211119212817",
+  "modelVersionId": "1"
+}
